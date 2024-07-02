@@ -1,5 +1,5 @@
 {
-  "name": "helper-code-gen-ai-test",
+  "name": "code-gen-extension-poc",
   "displayName": "HelperCodeGenAITest",
   "description": "",
   "version": "0.0.1",
@@ -17,22 +17,22 @@
   "contributes": {
     "commands": [
       {
-        "command": "helper-code-gen-ai-test.helloWorld",
+        "command": "code-gen-extension-poc.helloWorld",
         "title": "Hello World",
         "category": "Init"
       },
       {
-        "command": "helper-code-gen-ai-test.pushCode",
+        "command": "code-gen-extension-poc.pushCode",
         "title": "Push code 📸",
         "category": "Helper"
       },
       {
-        "command": "helper-code-gen-ai-test.pushCodeExplorer",
+        "command": "code-gen-extension-poc.pushCodeExplorer",
         "title": "Push code explorer",
         "category": "Helper"
       },
       {
-        "command": "helper-code-gen-ai-test.genDto",
+        "command": "code-gen-extension-poc.genDto",
         "title": "Generate DTO",
         "category": "Helper"
       }
@@ -40,32 +40,32 @@
     "menus": {
       "editor/context": [
         {
-          "command": "helper-code-gen-ai-test.pushCode",
+          "command": "code-gen-extension-poc.pushCode",
           "when": "editorHasSelection",
           "group": "3_actions"
         },
         {
-          "command": "helper-code-gen-ai-test.helloWorld",
+          "command": "code-gen-extension-poc.helloWorld",
           "group": "3_actions"
         }
       ],
       "explorer/context": [
         {
-          "command": "helper-code-gen-ai-test.genDto",
+          "command": "code-gen-extension-poc.genDto",
           "when": "resourceLangId",
           "group": "4_tools"
         }
       ],
       "editor/title/context": [
         {
-          "command": "helper-code-gen-ai-test.pushCodeExplorer",
+          "command": "code-gen-extension-poc.pushCodeExplorer",
           "when": "resourceLangId",
           "group": "3_custom"
         }
       ],
       "editor/title": [
         {
-          "command": "helper-code-gen-ai-test.pushCodeExplorer",
+          "command": "code-gen-extension-poc.pushCodeExplorer",
           "when": "resourceLangId",
           "group": "navigation"
         }

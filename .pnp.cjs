@@ -12,14 +12,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],\
     "dependencyTreeRoots": [\
       {\
-        "name": "helper-code-gen-ai-test",\
+        "name": "code-gen-extension-poc",\
         "reference": "workspace:."\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
-      ["helper-code-gen-ai-test", ["workspace:."]]\
+      ["code-gen-extension-poc", ["workspace:."]]\
     ],\
     "fallbackPool": [\
     ],\
@@ -1612,11 +1612,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["helper-code-gen-ai-test", [\
+      ["code-gen-extension-poc", [\
         ["workspace:.", {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["helper-code-gen-ai-test", "workspace:."],\
+            ["code-gen-extension-poc", "workspace:."],\
             ["@types/mocha", "npm:10.0.7"],\
             ["@types/node", "npm:20.14.9"],\
             ["@types/vscode", "npm:1.90.0"],\

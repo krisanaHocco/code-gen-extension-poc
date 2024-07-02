@@ -3,11 +3,11 @@ import { GenerativeCodeService } from "./generate-dto/service/generative-code.se
 
 export function activate(context: vscode.ExtensionContext) {
   console.log(
-    'Congratulations, your extension "helper-code-gen-ai-test" is now active!'
+    'Congratulations, your extension "code-gen-extension-poc" is now active!'
   );
 
   const disposable = vscode.commands.registerCommand(
-    "helper-code-gen-ai-test.helloWorld",
+    "code-gen-extension-poc.helloWorld",
     () => {
       vscode.window.showInformationMessage(
         "Hello World from HelperCodeGenAITest!"
@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   const service = new GenerativeCodeService();
   const pushCodeCommand = vscode.commands.registerCommand(
-    "helper-code-gen-ai-test.pushCode",
+    "code-gen-extension-poc.pushCode",
     async () => {
       vscode.window.showInformationMessage("Push code to service");
       //   const text = vscode.window.activeTextEditor?.document.getText();
@@ -33,14 +33,14 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   const pushCodeExplorerCommand = vscode.commands.registerCommand(
-    "helper-code-gen-ai-test.pushCodeExplorer",
+    "code-gen-extension-poc.pushCodeExplorer",
     async () => {
       vscode.window.showInformationMessage("Push code explorer to service");
     }
   );
 
   const genDtoCommand = vscode.commands.registerCommand(
-    "helper-code-gen-ai-test.genDto",
+    "code-gen-extension-poc.genDto",
     async (uri: vscode.Uri) => {
       vscode.window.showInformationMessage(
         "Push code explorer to service" + uri.fsPath
