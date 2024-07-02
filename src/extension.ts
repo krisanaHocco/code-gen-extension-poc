@@ -19,9 +19,6 @@ export function activate(context: vscode.ExtensionContext) {
   const pushCodeCommand = vscode.commands.registerCommand(
     "code-gen-extension-poc.pushCode",
     async () => {
-      vscode.window.showInformationMessage("Push code to service");
-      //   const text = vscode.window.activeTextEditor?.document.getText();
-
       const editor = vscode.window.activeTextEditor;
       if (editor) {
         const selection = editor.selection;
@@ -42,9 +39,6 @@ export function activate(context: vscode.ExtensionContext) {
   const genDtoCommand = vscode.commands.registerCommand(
     "code-gen-extension-poc.genDto",
     async (uri: vscode.Uri) => {
-      vscode.window.showInformationMessage(
-        "Push code explorer to service" + uri.fsPath
-      );
       service.generateDto(uri.fsPath);
     }
   );
