@@ -6,7 +6,7 @@ export class GenerativeCodeService {
   constructor() {}
 
   async generateCode(selectedText: string): Promise<string> {
-    return `Selected text : ${selectedText}`;
+    return `\n\tSelected text : ${selectedText}`;
   }
 
   async generateDto(entityPath: string) {

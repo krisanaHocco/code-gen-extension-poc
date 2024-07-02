@@ -22,8 +22,8 @@
         "category": "Init"
       },
       {
-        "command": "code-gen-extension-poc.pushCode",
-        "title": "Push code 📸",
+        "command": "code-gen-extension-poc.genCode",
+        "title": "Generate code",
         "category": "Helper"
       },
       {
@@ -40,7 +40,7 @@
     "menus": {
       "editor/context": [
         {
-          "command": "code-gen-extension-poc.pushCode",
+          "command": "code-gen-extension-poc.genCode",
           "when": "editorHasSelection",
           "group": "3_actions"
         },

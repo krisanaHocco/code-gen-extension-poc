@@ -14,21 +14,38 @@ export function activate(context: vscode.ExtensionContext) {
         "Hello World from CodeGenExtensionPoc!"
       );
       const service = new ExternalApiService();
-      const response = await service.get('https://randomuser.me/api/');
+      const response = await service.get("https://randomuser.me/api/");
       console.log("Response : ", response);
     }
   );
 
   const service = new GenerativeCodeService();
-  const pushCodeCommand = vscode.commands.registerCommand(
-    "code-gen-extension-poc.pushCode",
+  const genCodeCommand = vscode.commands.registerCommand(
+    "code-gen-extension-poc.genCode",
     async () => {
       const editor = vscode.window.activeTextEditor;
       if (editor) {
+        const document = editor.document;
         const selection = editor.selection;
-        const selectedText = editor.document.getText(selection);
+        const selectedText = document.getText(selection);
+
+        const positionEnd = selection.end;
+
         const code = await service.generateCode(selectedText);
-        console.log(code);
+
+        editor
+          .edit((editBuilder) => {
+            editBuilder.insert(positionEnd, code);
+          })
+          .then((success) => {
+            if (success) {
+              vscode.window.showInformationMessage(
+                "Inserted code after the selected block!"
+              );
+            } else {
+              vscode.window.showErrorMessage("Failed to insert code.");
+            }
+          });
       }
     }
   );
@@ -49,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(
     disposable,
-    pushCodeCommand,
+    genCodeCommand,
     pushCodeExplorerCommand,
     genDtoCommand
   );
