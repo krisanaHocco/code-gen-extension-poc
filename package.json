@@ -1,6 +1,6 @@
 {
   "name": "code-gen-extension-poc",
-  "displayName": "HelperCodeGenAITest",
+  "displayName": "CodeGenExtensionPoc",
   "description": "",
   "version": "0.0.1",
   "publisher": "krisana-hocco",
@@ -73,10 +73,10 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
+    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint",
+    "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test"
   },
@@ -92,6 +92,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "ts-morph": "^23.0.0"
   }
 }

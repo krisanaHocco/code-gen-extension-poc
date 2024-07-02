@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { GenerativeCodeService } from "./generate-dto/service/generative-code.service";
+import { ExternalApiService } from "./external-api/service/external-api.service";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log(
@@ -8,10 +9,13 @@ export function activate(context: vscode.ExtensionContext) {
 
   const disposable = vscode.commands.registerCommand(
     "code-gen-extension-poc.helloWorld",
-    () => {
+    async () => {
       vscode.window.showInformationMessage(
-        "Hello World from HelperCodeGenAITest!"
+        "Hello World from CodeGenExtensionPoc!"
       );
+      const service = new ExternalApiService();
+      const response = await service.get('https://randomuser.me/api/');
+      console.log("Response : ", response);
     }
   );
 
